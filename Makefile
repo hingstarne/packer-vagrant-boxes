@@ -1,4 +1,4 @@
-BUILDER_TYPES = vmware virtualbox
+BUILDER_TYPES = virtualbox
 TEMPLATE_DIRS := $(wildcard template/*)
 TEMPLATE_FILES := $(patsubst %, %/template.json, ${TEMPLATE_DIRS})
 BOX_FILENAMES := $(patsubst template/%, %.box, ${TEMPLATE_DIRS})
@@ -8,17 +8,12 @@ RM = rm -f
 .PHONY: all
 all: $(BOX_FILES)
 
-vmware/%.box: template/%/template.json
-	cd $(dir $<); \
-	rm -rf output-vmware; \
-	mkdir -p ../../vmware; \
-	packer build -only=vmware $(notdir $<)
-
 virtualbox/%.box: template/%/template.json
+	cp variables.json $(dir $<)variables.json
 	cd $(dir $<); \
 	rm -rf output-virtualbox; \
 	mkdir -p ../../virtualbox; \
-	packer build -only=virtualbox $(notdir $<)
+	packer build -var-file=variables.json -only=virtualbox $(notdir $<)
 
 .PHONY: list
 list:
@@ -27,6 +22,9 @@ list:
 			echo $$builder/$$box_filename ; \
 		done ; \
 	done
+variables:
+	./create_env.sh
+
 
 .PHONY: clean
 clean:
