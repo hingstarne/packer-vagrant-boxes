@@ -6,7 +6,7 @@
   "builders": [
     {
 
-      "vm_name": "ai-debian71",
+      "vm_name": "debian-710-x64-vb4218",
       "type": "virtualbox",
       "guest_os_type": "Debian_64",
       "http_directory": "http",
@@ -55,6 +55,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/ai-debian71.box"
+    "output": "../../{{.Provider}}/debian-710-x64-vb4218.box"
   }]
 }

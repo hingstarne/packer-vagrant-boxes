@@ -23,7 +23,7 @@ list:
 		done ; \
 	done
 variables:
-	./create_env.sh
+	./create_env.py
 
 
 .PHONY: clean
