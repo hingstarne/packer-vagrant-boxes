@@ -13,7 +13,7 @@ virtualbox/%.box: template/%/template.json
 	cd $(dir $<); \
 	rm -rf output-virtualbox; \
 	mkdir -p ../../virtualbox; \
-	packer build -var-file=variables.json -only=virtualbox $(notdir $<)
+	packer build -var-file=../../variables.json -only=virtualbox $(notdir $<)
 
 .PHONY: list
 list:

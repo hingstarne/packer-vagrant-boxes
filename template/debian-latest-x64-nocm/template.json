@@ -6,7 +6,7 @@
   "builders": [
     {
 
-      "vm_name": "debian-710-x64-vb4218",
+      "vm_name": "debian-710-x64-vb4218-nocm",
       "type": "virtualbox",
       "guest_os_type": "Debian_64",
       "http_directory": "http",
@@ -43,8 +43,6 @@
       "script/base.sh",
       "script/vagrant.sh",
       "script/vmtools.sh",
-      "script/puppet.sh",
-      "script/chef.sh",
       "script/cleanup.sh",
       "script/zerodisk.sh"
     ],
@@ -57,6 +55,6 @@
   "post-processors": [{
     "type": "vagrant",
     "keep_input_artifact": true,
-    "output": "../../{{.Provider}}/debian-710-x64-vb4218.box"
+    "output": "../../{{.Provider}}/debian-710-x64-vb4218-nocm.box"
   }]
 }
