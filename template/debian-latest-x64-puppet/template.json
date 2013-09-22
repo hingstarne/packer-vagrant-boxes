@@ -44,7 +44,6 @@
       "script/vagrant.sh",
       "script/vmtools.sh",
       "script/puppet.sh",
-      "script/chef.sh",
       "script/cleanup.sh",
       "script/zerodisk.sh"
     ],
