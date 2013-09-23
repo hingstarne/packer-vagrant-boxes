@@ -40,12 +40,12 @@
   "provisioners": [{
     "type": "shell",
     "scripts": [
-      "script/base.sh",
-      "script/vagrant.sh",
-      "script/vmtools.sh",
-      "script/puppet.sh",
-      "script/cleanup.sh",
-      "script/zerodisk.sh"
+      "../../script/base.sh",
+      "../../script/vagrant.sh",
+      "../../script/vmtools.sh",
+      "../../script/puppet.sh",
+      "../../script/cleanup.sh",
+      "../../script/zerodisk.sh"
     ],
     "override": {
       "virtualbox": {

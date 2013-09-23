@@ -23,7 +23,7 @@ list:
 		done ; \
 	done
 variables:
-	./create_env.py
+	./script/create_env.py
 
 
 .PHONY: clean
